@@ -1,0 +1,23 @@
+@formatter:off
+{
+   "size": {{ size }},
+   "query":{
+     "bool": {
+       "filter": [
+         {
+           "terms": {
+             "genre.keyword": {{{ list_string_helper genres }}}
+           }
+         }
+       ],
+       "must": [
+         {
+           "match": {
+             "title": "{{ term }}"
+           }
+         }
+       ]
+     }
+   }
+}
+@formatter:on

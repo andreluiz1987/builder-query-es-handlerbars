@@ -1,0 +1,39 @@
+@formatter:off
+{
+   "size": {{ size }},
+   "query":{
+     "bool": {
+       "filter": [
+         {{#if genres }}
+         {
+           "terms": {
+             "genre.keyword": {{{ list_string_helper genres }}}
+           }
+         },
+         {{/if}}
+         {{#if certificate }}
+         {
+          "term": {
+            "certificate": "{{ certificate }}"
+          }
+         },
+         {{/if}}
+         {
+           "range": {
+             "rating": {
+               "gte": {{ rating }}
+             }
+           }
+         }
+       ],
+       "must": [
+         {
+           "match": {
+             "title": "{{ term }}"
+           }
+         }
+       ]
+     }
+   }
+}
+@formatter:on
