@@ -1,6 +1,5 @@
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Helper;
-import com.github.jknack.handlebars.Options;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -9,8 +8,8 @@ import java.util.stream.Collectors;
 public class Main {
 
   public static void main(String[] args) throws IOException {
-    //queryMatchSimply();
-    //queryMatchFilterSimply();
+    queryMatchSimply();
+    queryMatchFilterSimply();
     queryMatchMultiFilters();
   }
 
