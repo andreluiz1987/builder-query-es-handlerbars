@@ -17,7 +17,6 @@ public class Main {
     var params = new SearchParams();
     params.setSize(10);
     params.setTerm("batman");
-    //params.setGenres(List.of("Action", "Adventure"));
     params.setCertificate("AU");
     params.setRating(6.0);
 
